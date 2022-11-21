@@ -22,8 +22,7 @@
     if(response.ok){
       var data = await response.json();
       
-      var citStudents = data.filter( (student) => data.major == "BUS");
-      var citStudents = data.filter( (student) => data.major == "CIT");
+    
       
       var tableContents = "<table cellspacing='5'>";
       tableContents += "<tr><td>Name</td><td>Major</td><td>Midterm</td><td>Final</td></tr>";
@@ -33,6 +32,9 @@
           <td> ${data[i].major}</td>
           <td> ${data[i].midterm}</td>
           <td> ${data[i].final}</td>`;
+        
+      var citStudents = data.filter( (student) => data.major == "BUS");
+      var citStudents = data.filter( (student) => data.major == "CIT");
       }
       
       tableContents += "</table>";
