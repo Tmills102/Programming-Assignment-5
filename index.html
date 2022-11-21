@@ -17,17 +17,16 @@
   
   document.querySelector('#CITbtn').onclick = async function(){
   
-    for(i=0; i<data.length; i++){
-    var citStudents = data.filter( (student) => data.major == "BUS");
-    var citStudents = data.filter( (student) => data.major == "CIT");
-    
-    }
+   
   var response = await fetch('cit5students.json');
     console.log(response);
     if(response.ok){
       var data = await response.json();
       
+     for(i=0; i<data.length; i++){
+    var citStudents = data.filter( (student) => data.major == "CIT");
     
+    }
       
       var tableContents = "<table cellspacing='5'>";
       tableContents += "<tr><td>Name</td><td>Major</td><td>Midterm</td><td>Final</td></tr>";
