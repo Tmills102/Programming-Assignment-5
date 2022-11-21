@@ -17,6 +17,11 @@
   
   document.querySelector('#CITbtn').onclick = async function(){
   
+    for(i=0; i<data.length; i++){
+    var citStudents = data.filter( (student) => data.major == "BUS");
+    var citStudents = data.filter( (student) => data.major == "CIT");
+    
+    }
   var response = await fetch('cit5students.json');
     console.log(response);
     if(response.ok){
@@ -32,9 +37,7 @@
           <td> ${data[i].major}</td>
           <td> ${data[i].midterm}</td>
           <td> ${data[i].final}</td>`;
-        
-      var citStudents = data.filter( (student) => data.major == "BUS");
-      var citStudents = data.filter( (student) => data.major == "CIT");
+     
       }
       
       tableContents += "</table>";
